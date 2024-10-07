@@ -1,0 +1,235 @@
+--------------------------------------------------------
+Nivel  0
+
+Descrição:
+Ler o ficheiro readme.
+
+Solução:
+  $ls
+	$cat readme
+
+Conteudo do Ficheiro:ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+--------------------------------------------------------
+Nivel 1
+
+Descrição:
+Neste nivel podemos aprender a abrir ficheiros 
+com caracteres especiais, no caso  o terminal 
+pode interpretar isso com parte de um comando 
+e não abrira o ficheiro
+
+Solução:
+Para conseguirmos ver o conteudo do ficheiro temos que
+especificar o seu path completo no caso
+	&cat ./-
+
+Conteudo do Ficheiro:263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+--------------------------------------------------------
+Nivel 2
+
+Descrição:
+A password deste exercicio encontra se em um ficheiro
+chamado "spaces in this filename", como contem espaços
+o restante nome depois de "spaces" pode ser ignorado 
+ou tido como argumentos em um terminal.
+
+Solução:
+Para visualizar o conteudo do ficheiro temos que 
+conter todo o nome para isso podemos usar dois metodos
+
+	$cat spaces\ in\ this\ filename
+
+ou
+
+	$cat "spaces in this filename"
+
+Conteudo do ficheiro:MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+--------------------------------------------------------
+Nivel 3
+
+Descrição:
+Em este nivel a password parece estar escondida em 
+um ficheiro oculto dentro da pasta "inhere",
+
+Solução:
+Para conseguirmos visualizar ficheiros ocultos podemos
+usar simplemente usar o algumento "-a" do ls
+
+	$ls -a
+
+Assim conseguimos ver que existe um ficheiro chamado
+"...Hiding-From-You" dentro da pasta,
+para o visualizar basta usar um cat
+
+	"$cat ...Hiding-From-You"
+
+Conteudo do ficheiro:2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+--------------------------------------------------------
+Nivel 4
+
+Descrição:
+Neste nivel é nos dado 9 ficheiros dentro da pasta "inhere"
+Apenas um é suposto ser lido corretamente.
+Todos os ficheiros començam com o caracter especial "-"
+
+Solução:
+Utilizar um cat com o path completo e verificar se
+conseguimos ler os ficheiros.
+Eventualmente o ficheiro "-file07" parece ter conteudo legivel
+
+	"$cat ./-file07"
+
+Conteudo do Ficheiro:4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+--------------------------------------------------------
+Nivel 5
+
+Descrição:
+Neste nivel é nos dado varios diretorios com varios ficheiros e com a informação de que procuramos um ficheiro com as seguintes caracteristicas
+-Pode ser lido por humanos
+-Ocupa 1033 bytes
+-Não é executavel
+
+Solução:
+Usando o "find" podemos simplemente procurar por os ficheiros que teem exatamente esse tamanho
+
+	"$find -type f -size 1033c"
+
+isso danos apenas um resultado
+./maybehere07/.file2
+
+A continuação um simples cat desse ficheiro da-nos a resposta que queremos
+	
+
+	"$cat ./maybehere07/-file02"
+
+Conteudo do ficheiro:HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+--------------------------------------------------------
+Nivel 6
+
+Descrição:
+No seguinte nivel é nos dado a seguinte informação,
+algures no servidor existe um ficheiro com todas estas propriedades
+
+- O dono é bandit7
+- o grupo é bandit6
+- 33 bytes de tamanho
+
+Solução:
+A solução mais facil é usar novamente o "find" e filtrar 
+a busca por -user -group e tamanho
+
+	"$find / -user bandit7 -group bandit6 -size 33c"
+
+O que nos da um serie de resultados com permissões negadas, e no meio delas o ficheiro que procuramos.
+Adicionalmente podemos filtrar esses erros com "2>/dev/null"
+
+	"find / -user bandit7 -group bandit6 -size 33c 2>/dev/null"
+
+Resultado apenas de um ficheiro nos resultados
+/var/lib/dpkg/info/bandit7.password
+
+Para terminar usamos o "cat"
+	"$cat /var/lib/dpkg/info/bandit7.password"
+
+Conteudo do ficheiro:morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+--------------------------------------------------------
+Nivel 7
+
+Descrição:
+A seguinte password encontra se no ficheiro data.txt,
+a seguir a palavra "millionth"
+
+Solução:
+A maneira mais simples de resolver este exercicio é 
+simplemente abrir o ficheiro com o vim e procurar a palavra.
+
+	"vim data.txt"
+	Modo Normal: /millionth
+
+Usando apenas bash podemos fazer um grep
+
+	"$grep millionth.* data.txt"
+
+Conteudo do ficheiro:dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+--------------------------------------------------------
+Nivel 8
+
+Descrição:
+A password encontra se na unica linha do ficheiro data.txt que não é repetida.
+
+Solução:
+Organizar o ficheiro e emprimir as linhas unicas
+
+	"$sort data.txt | uniq -u"
+
+Conteudo do ficheiro:4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+--------------------------------------------------------
+Nivel 9
+
+Descrição:
+No seguinte nivel a password esta dentro do ficheiro data.txt antecedida por varios caracteres "="
+
+Solução
+Abrindo o ficheiro com o vim podemos simplemente detectar a olho a password, mas para utlizar um solução mais refinada podemos utilizar um grep
+Como o ficheiro é binario podemos forçar o grep a imprimircom "-a"
+
+	"$grep -a '=' data.txt"
+
+Isso ainda nos da bastantes resutlados, solução aumentar o numero de caracteres '='
+
+	"grep -a '==' data.txt"
+
+apos isso conseguimos facilmente identificar a password
+
+Conteudo do ficheiro:FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+--------------------------------------------------------
+Nivel 10
+
+Descrição:
+A password encontra-se incriptada em base64 no ficheiro data.txt
+
+Solução:
+Simplemente usar o comando base64 -d
+
+	"$base64 -d data.txt"
+
+Conteudo do ficheiro:dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+--------------------------------------------------------
+Nivel 11
+
+Descrição:
+A password encontra se no ficheiro data.txt com todos os caracteres rodados 13 posições
+
+Solução:
+Usar um cat seguido de um pipe com o comando tr
+
+	"$cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'"
+
+Conteudo do ficheiro:7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+--------------------------------------------------------
+Nivel 12
+
+Descrição:
+
+Solução:
+cat data.txt | xxd -r | zcat | bzcat | zcat | tar -xf - -O | tar -x -O | bzcat | tar -x -O | zcat
+
+Conteudo do ficheiro:FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+--------------------------------------------------------
+Nivel 13
+
+Descrição:
+
+Pede para nos ligarmos ao seguinte utilizador por ssh
+a chave encontra se no home
+
+Solução:
+
+É so ligarmo-nos por ssh e adicionar "-i [Caminho da chave]"
+Falta o comando.
+
+--------------------------------------------------------
+Nivel 14
+
+Descrição:
+Continuar...

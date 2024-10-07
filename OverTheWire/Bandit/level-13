@@ -1,9 +1,0 @@
-Descrição:
-
-Pede para nos ligarmos ao seguinte utilizador por ssh
-a chave encontra se no home
-
-Solução:
-
-É so ligarmo-nos por ssh e adicionar "-i [Caminho da chave]"
-

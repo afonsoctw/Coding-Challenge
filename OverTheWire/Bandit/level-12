@@ -1,3 +1,0 @@
-Descrição:
-cat data.txt | xxd -r | zcat | bzcat | zcat | tar -xf - -O | tar -x -O | bzcat | tar -x -O | zcat
-The password is FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
