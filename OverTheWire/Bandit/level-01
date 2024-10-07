@@ -1,0 +1,15 @@
+Descrição:
+
+Neste nivel podemos aprender a abrir ficheiros 
+com caracteres especiais, no caso  o terminal 
+pode interpretar isso com parte de um comando 
+e não abrira o ficheiro
+
+Solução:
+Para conseguirmos ver o conteudo do ficheiro temos que
+especificar o seu path completo no caso
+	&cat ./-
+
+Conteudo do ficheiro:
+263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+	

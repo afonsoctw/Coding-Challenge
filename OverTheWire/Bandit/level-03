@@ -1,0 +1,18 @@
+Descrição:
+Em este nivel a password parece estar escondida em 
+um ficheiro oculto dentro da pasta "inhere",
+
+Solução:
+Para conseguirmos visualizar ficheiros ocultos podemos
+usar simplemente usar o algumento "-a" do ls
+
+	"$ls -a"
+
+Assim conseguimos ver que existe um ficheiro chamado
+"...Hiding-From-You" dentro da pasta,
+para o visualizar basta usar um cat
+
+	"$cat ...Hiding-From-You"
+
+Conteudo do ficheiro:
+2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ

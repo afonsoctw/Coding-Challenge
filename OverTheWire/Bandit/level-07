@@ -1,0 +1,17 @@
+Descrição:
+A seguinte password encontra se no ficheiro data.txt,
+a seguir a palavra "millionth"
+
+Solução:
+A maneira mais simples de resolver este exercicio é simplemente abrir o ficheiro com o vim e procurar a palavra.
+
+	"vim data.txt"
+	Modo Normal: /millionth
+
+Usando apenas bash podemos fazer um grep
+
+	"$grep millionth.* data.txt"
+
+Conteudo do ficheiro (Apenas a Password):
+dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+

@@ -1,0 +1,17 @@
+Descrição:
+No seguinte nivel a password esta dentro do ficheiro data.txt antecedida por varios caracteres "="
+
+Solução
+Abrindo o ficheiro com o vim podemos simplemente detectar a olho a password, mas para utlizar um solução mais refinada podemos utilizar um grep
+Como o ficheiro é binario podemos forçar o grep a imprimircom "-a"
+
+	"$grep -a '=' data.txt"
+
+Isso ainda nos da bastantes resutlados, solução aumentar o numero de caracteres '='
+
+	"grep -a '==' data.txt"
+
+apos isso conseguimos facilmente identificar a password
+
+Conteudo do ficheiro (Apenas a password):
+FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey

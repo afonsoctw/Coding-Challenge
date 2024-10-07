@@ -1,0 +1,14 @@
+Descrição:
+Neste nivel é nos dado 9 ficheiros dentro da pasta "inhere"
+Apenas um é suposto ser lido corretamente.
+Todos os ficheiros començam com o caracter especial "-"
+
+Solução:
+Utilizar um cat com o path completo e verificar se 
+conseguimos ler os ficheiros.
+Eventualmente o ficheiro "-file07" parece ter conteudo legivel
+
+	"$cat ./-file07"
+
+Conteudo do Ficheiro:
+4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
